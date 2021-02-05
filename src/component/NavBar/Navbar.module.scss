@@ -1,0 +1,80 @@
+@import "../../styles/color";
+.Navbar {
+    padding: 1rem;
+    background: $bgMainColor;
+    color: $mainColor;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.31);
+    .Brand {
+        font-size: 1.75rem;
+        font-weight: 700;
+        @media screen and (max-width: 768px) {
+            align-self: center;
+        }
+    }
+    .Icon {
+        width: 55px;
+        display: none;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba($mainColor, 0.2);
+        padding: 0.6rem 0.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        & > span {
+            width: 100%;
+            display: block;
+            height: 3px;
+            background: rgba($mainColor, 0.5);
+            margin-top: 5px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            display: flex;
+        }
+    }
+    .NavMenu {
+        list-style: none;
+        padding: 0;
+        margin: 0 3rem 0 0;
+        align-self: center;
+        display: flex;
+        justify-content: flex-start;
+        li {
+            margin-right: 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+            &:last-child {
+                margin: 0;
+            }
+            a {
+                display: flex;
+                justify-content: flex-start;
+                &.Active {
+                    color: $activeLinkColor;
+                }
+                svg {
+                    align-self: center;
+                    margin-right: 0.25rem;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+    // global styles in Navbar class
+    & a {
+        color: $mainColor;
+        &:hover {
+            text-decoration: none;
+            color: $hoverColor;
+        }
+    }
+}
